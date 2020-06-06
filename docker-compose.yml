@@ -3,7 +3,7 @@ services:
   web:
     image: sigortakontrol:v1
     ports:
-      - "3100:80"
+      - "6000:80"
     networks:
       - proxy
     labels:
