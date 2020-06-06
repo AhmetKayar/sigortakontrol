@@ -1,0 +1,18 @@
+version: '3'
+services:
+  web:
+    image: sigortakontrol:v1
+    ports:
+      - "3000:80"
+    networks:
+      - proxy
+    labels:
+      - "traefik.docker.network=proxy"
+      - "traefik.enable=true"
+      - "traefik.http.routers.web.rule=Host(`www.sigortakontrol.com`)"
+      - "traefik.http.routers.web.entrypoints=https"
+      - "traefik.http.routers.web.tls.certresolver=http"
+
+networks:
+  proxy:
+    external: true
