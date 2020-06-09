@@ -1,6 +1,6 @@
 version: '3'
 services:
-  sitekontrol:
+  sigortakontrol:
     image: sigortakontrol:v1
     ports:
       - "6000:80"
@@ -9,9 +9,9 @@ services:
     labels:
       - "traefik.docker.network=proxy"
       - "traefik.enable=true"
-      - "traefik.http.routers.sitekontrol.rule=Host(`www.sigortakontrol.com`)"
-      - "traefik.http.routers.sitekontrol.entrypoints=https"
-      - "traefik.http.routers.sitekontrol.tls.certresolver=http"
+      - "traefik.http.routers.sigortakontrol.rule=Host(`www.sigortakontrol.com`,`sigortakontrol.com`)"
+      - "traefik.http.routers.sigortakontrol.entrypoints=https"
+      - "traefik.http.routers.sigortakontrol.tls.certresolver=http"
 
 networks:
   proxy:
