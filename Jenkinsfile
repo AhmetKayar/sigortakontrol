@@ -8,7 +8,6 @@ pipeline {
     stage('Prepare') {
       steps {
         script {
-          sh 'npm install yarn -g'
           sh 'yarn install'
         }
       }
