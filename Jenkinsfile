@@ -8,22 +8,22 @@ pipeline {
     stage('Prepare') {
       steps {
         script {
-          sh 'npm install yarn -g'
-          sh 'yarn install'
+          sh 'sudo npm install yarn -g'
+          sh 'sudo yarn install'
         }
       }
     }
     stage('Test') {
       steps {
         script {
-          sh 'yarn test'
+          sh 'sudo yarn test'
         }
       }
     }
     stage('Build') {
       steps {
         script {
-          sh 'yarn build'
+          sh 'sudo yarn build'
         }
       }
     }
