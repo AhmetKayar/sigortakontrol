@@ -8,8 +8,6 @@ pipeline {
     stage('Prepare') {
       steps {
         script {
-          sh 'apk add nodejs'
-          sh 'echo $PATH'
           sh 'npm install yarn -g'
           sh 'yarn install'
         }
