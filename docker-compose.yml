@@ -21,7 +21,7 @@ services:
       - "traefik.http.routers.sigortakontrol-secure.rule=Host(`sigortakontrol.com`)"
       - "traefik.http.routers.sigortakontrol-secure.tls=true"
       - "traefik.http.routers.sigortakontrol-secure.tls.certresolver=http"
-      - "traefik.http.routers.sigortakontrol-secure.service=api@internal"
+      - "traefik.http.routers.sigortakontrol-secure.service=sigortakontrol@internal"
       - "traefik.http.services.sigortakontrol.loadbalancer.server.port=6000"
       - "traefik.docker.network=proxy"
 networks:
