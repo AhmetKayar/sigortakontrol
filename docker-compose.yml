@@ -10,7 +10,7 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.sigortakontrol.entrypoints=http"
       - "traefik.http.routers.sigortakontrol.rule=Host(`www.sigortakontrol.com`)"
-      - "traefik.http.middlewares.sigortakontrol-https-redirect.redirectscheme.schem$
+      - "traefik.http.middlewares.sigortakontrol-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.sigortakontrol.middlewares=sigortakontrol-https-redirect"
       - "traefik.http.routers.sigortakontrol-secure.entrypoints=https"
       - "traefik.http.routers.sigortakontrol-secure.rule=Host(`www.sigortakontrol.com`)"
