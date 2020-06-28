@@ -3,21 +3,15 @@ services:
   sigortakontrol:
     image: sigortakontrol:v1
     ports:
-      - "6080:80"
+      - "6000:80"
     networks:
       - proxy
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.sigortakontrol.entrypoints=http"
-      - "traefik.http.routers.sigortakontrol.rule=Host(`www.sigortakontrol.com`)"
-      - "traefik.http.middlewares.sigortakontrol-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.sigortakontrol.middlewares=sigortakontrol-https-redirect"
-      - "traefik.http.routers.sigortakontrol-secure.entrypoints=https"
-      - "traefik.http.routers.sigortakontrol-secure.rule=Host(`www.sigortakontrol.com`)"
-      - "traefik.http.routers.sigortakontrol-secure.tls=true"
-      - "traefik.http.routers.sigortakontrol-secure.tls.certresolver=http"
-      - "traefik.http.routers.sigortakontrol-secure.service=sigortakontrol"
       - "traefik.docker.network=proxy"
+      - "traefik.enable=true"
+      - "traefik.http.routers.sigortakontrol.rule=Host(`www.sigortakontrol.com`,`sigortakontrol.com`)"
+      - "traefik.http.routers.sigortakontrol.entrypoints=https"
+      - "traefik.http.routers.sigortakontrol.tls.certresolver=http"
 
 networks:
   proxy:
