@@ -4,7 +4,6 @@ services:
     image: sigortakontrol:v1
     ports:
       - "6080:80"
-      - "6443:443"
     networks:
       - proxy
     labels:
@@ -18,7 +17,6 @@ services:
       - "traefik.http.routers.sigortakontrol-secure.tls=true"
       - "traefik.http.routers.sigortakontrol-secure.tls.certresolver=http"
       - "traefik.http.routers.sigortakontrol-secure.service=sigortakontrol"
-      - "traefik.http.services.sigortakontrol.loadbalancer.server.port=6443"
       - "traefik.docker.network=proxy"
 
 networks:
